@@ -8,7 +8,7 @@ const List = () => {
     
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
-  
+    
     useEffect(() => {
       fetch(HOST + "/todos")
         .then(response => response.json())
@@ -18,15 +18,15 @@ const List = () => {
     }, [dispatch]);
   
     const onDelete = (id) => {
-      fetch(HOST + "/" + id + "/todo", {
+        fetch(HOST + "/" + id + "/todo", {
         method: "DELETE"
-      }).then((list) => {
-        dispatch({ type: "delete-item", id })
-      })
+        }).then((list) => {
+            dispatch({ type: "delete-item", id })
+        })
     };
   
     const onEdit = (todo) => {
-      dispatch({ type: "edit-item", item: todo })
+        dispatch({ type: "edit-item", item: todo })
     };
   
     const onChange = (event, todo) => {

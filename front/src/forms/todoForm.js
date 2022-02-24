@@ -18,7 +18,7 @@ const Form = () => {
         completed: false
       };
   
-      fetch( + "/todo", {
+      fetch( HOST + "/todo", {
         method: "POST",
         body: JSON.stringify(request),
         headers: {

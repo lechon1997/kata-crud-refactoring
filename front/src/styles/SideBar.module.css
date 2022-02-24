@@ -1,0 +1,9 @@
+
+.contenedor{
+    display:flex;
+    flex-direction: column;
+    width: 10vw;
+    height:100vh;
+    background-color: white;
+    border-right: 1px solid #BDBDBD;
+}
