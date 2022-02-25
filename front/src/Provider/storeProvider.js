@@ -3,8 +3,11 @@ import storeReducer from '../Reducer/storeReducer';
 const initialState = {
     todo: {
         list: [],
-        item: {} 
-        }
+        item: {}
+        },
+    categorias: {
+        list : []
+    }
 };
 
 const Store = createContext(initialState)
@@ -13,7 +16,7 @@ const StoreProvider = ({ children }) => {
     const [state, dispatch] = useReducer(storeReducer, initialState);
   
     return(
-        <Store.Provider value={{ state, dispatch }}>
+    <Store.Provider value={{ state, dispatch }}>
         {children}
     </Store.Provider>
     )

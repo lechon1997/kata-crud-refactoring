@@ -30,7 +30,6 @@ public class TodoController {
     public ResponseEntity<DTTodo> save(@RequestBody DTTodo dtTodo){
         Long idCategoria = dtTodo.getId_categoria();
         Optional<Categoria> optionalCategoria = categoriaService.obtenerCategoria(idCategoria);
-
         if(optionalCategoria.isPresent()){
             Categoria categoria = (Categoria) optionalCategoria.get();
 
