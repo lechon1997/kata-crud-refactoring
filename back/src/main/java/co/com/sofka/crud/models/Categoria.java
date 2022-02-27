@@ -13,7 +13,7 @@ public class Categoria {
     @Column(length = 20, nullable = false, unique = true)
     private String name;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Todo> todo;
 
     public Categoria() {

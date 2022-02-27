@@ -21,7 +21,16 @@ public class CategoriaService {
     }
 
     public Optional<Categoria> obtenerCategoria(Long id){
-        int x2 = 3;
         return repository.findById(id);
+    }
+
+    public boolean deleteCategoriaById(Long id){
+        try {
+            repository.deleteById(id);
+            return true;
+        }catch(Exception e){
+            return false;
+        }
+
     }
 }

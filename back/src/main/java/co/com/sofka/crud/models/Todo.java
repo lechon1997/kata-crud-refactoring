@@ -15,9 +15,9 @@ public class Todo {
     public Todo() {
     }
 
-    public Todo(String name) {
+    public Todo(String name,boolean completed) {
         this.name = name;
-        this.completed = false;
+        this.completed = completed;
     }
 
     public Long getId() {

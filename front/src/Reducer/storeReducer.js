@@ -1,6 +1,22 @@
 
 const storeReducer = (state, action) => {
     switch (action.type) {
+      case 'update-categoria':
+        const categoriasUpdate = state.categorias.list;
+        const newCategoriasUpdate = categoriasUpdate.map((categoria) => {
+          if(categoria.id === action.item.id){
+            return action.item;
+          }
+          return categoria;
+        })
+      return {...state, categorias: {list: newCategoriasUpdate}}        
+
+      case 'delete-categoria':
+        const categoriasDelete = state.categorias.list;
+        const newListCategorias = categoriasDelete.filter((item) => {
+            return item.id !== action.id;
+          });
+        return { ...state, categorias: {list: newListCategorias}}
 
       case 'add-categoria':
         const categoriaUp = state.categorias.list;
@@ -13,24 +29,29 @@ const storeReducer = (state, action) => {
         return { ...state, categorias: categoriasList }
       
         case 'update-item':
-        const todoUpItem = state.todo;
-        const listUpdateEdit = todoUpItem.list.map((item) => {
-          if (item.id === action.item.id) {
-            return action.item;
-          }
-          return item;
-        });
-        todoUpItem.list = listUpdateEdit;
-        todoUpItem.item = {};
-        return { ...state, todo: todoUpItem }
-      
+        const categoriasUpdateTodo = state.categorias.list;
+        for(const categoria of categoriasUpdateTodo){
+          const categoriaUpdate = categoria.todo.map((todo) => {
+            if(todo.id === action.item.id){
+              return action.item
+            }
+            return todo;
+          });
+            categoria.todo = categoriaUpdate;
+        }
+
+        return {...state, categorias: {list: categoriasUpdateTodo}}
+        
         case 'delete-item':
-        const todoUpDelete = state.todo;
-        const listUpdate = todoUpDelete.list.filter((item) => {
-          return item.id !== action.id;
-        });
-        todoUpDelete.list = listUpdate;
-        return { ...state, todo: todoUpDelete }
+        const categoriasAux = state.categorias.list;
+        for (const categoria of categoriasAux){
+          const todoList = categoria.todo.filter((item) => {
+            return item.id !== action.id;
+          });
+          categoria.todo = todoList;
+        }
+        
+        return { ...state, categorias: {list: categoriasAux}}
       
         case 'update-list':
         const todoUpList = state.todo;

@@ -3,6 +3,7 @@ package co.com.sofka.crud.DT;
 public class DTTodo {
     private Long id;
     private String name;
+    private boolean completed;
     private Long id_categoria;
 
     public DTTodo() {
@@ -12,6 +13,13 @@ public class DTTodo {
     public DTTodo(Long id, String name, Long id_categoria) {
         this.id = id;
         this.name = name;
+        this.id_categoria = id_categoria;
+    }
+
+    public DTTodo(Long id, String name, boolean isCompleted,Long id_categoria) {
+        this.id = id;
+        this.name = name;
+        this.completed = isCompleted;
         this.id_categoria = id_categoria;
     }
 
@@ -37,5 +45,13 @@ public class DTTodo {
 
     public void setId_categoria(Long id_categoria) {
         this.id_categoria = id_categoria;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }

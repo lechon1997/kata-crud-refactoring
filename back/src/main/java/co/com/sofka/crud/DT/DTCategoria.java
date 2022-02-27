@@ -13,10 +13,10 @@ public class DTCategoria {
     public DTCategoria() {
     }
 
-    public DTCategoria(Long id,String name) {
+    public DTCategoria(Long id,String name, List todo) {
         this.id = id;
         this.name = name;
-        this.todo = new ArrayList<>();
+        this.todo = todo;
     }
 
     public Long getId() {
