@@ -47,3 +47,6 @@ Realizar la siguiente representación donde se tiene TO-Do List agripado en list
 
 ![alt text]( ./todo-list-kata.gif "Demo funcional del ToDo List")
 
+## LINK AL VIDEO QUE PRESENTA LA SOLUCIÓN AL TALLER FINAL DEL MODULO DE DESARROLLO WEB
+https://youtu.be/gCV6UepMO8w
+
